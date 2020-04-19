@@ -26,8 +26,8 @@ export class CartComponent implements OnInit {
 
   ngOnInit() {
     this.items = this.cartService.getItems();
-    this.totalPrice = this.cartService.getTotalPrice(this.items, 'price') + this.shippingPrice;
     this.shippingPrices = this.cartService.getShippingPrices();
+    this.totalPrice = this.cartService.getTotalPrice(this.items, 'price') + this.shippingPrice;
   }
 
   onSubmit(customerData) {
