@@ -12,14 +12,23 @@
     Description: {{ product.description }}
   </p>
 
+  <div class="btn-group">
+    <button (click)="share()">Share</button>
+    <app-product-alerts [product]="product" (notify)="onNotify()"></app-product-alerts>
+    <button (click)="addToCart(product)">Buy</button>
+  </div>
+
+<!--
   <button (click)="share()">
     Share
   </button>
-
+-->
+<!--
   <app-product-alerts
     [product]="product"
     (notify)="onNotify()">
-</app-product-alerts>
+  </app-product-alerts>
+-->
 
 </div>
 

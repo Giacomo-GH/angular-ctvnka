@@ -12,6 +12,7 @@ export class CartComponent implements OnInit {
   checkoutForm;
   totalPrice;
   shippingPrices;
+  shippingPrice = 0;
   
   constructor(
     private cartService: CartService,
@@ -25,7 +26,7 @@ export class CartComponent implements OnInit {
 
   ngOnInit() {
     this.items = this.cartService.getItems();
-    this.totalPrice = this.cartService.getTotalPrice(this.items, 'price');
+    this.totalPrice = this.cartService.getTotalPrice(this.items, 'price') + this.shippingPrice;
     this.shippingPrices = this.cartService.getShippingPrices();
   }
 
@@ -40,7 +41,8 @@ export class CartComponent implements OnInit {
 
   getShippingType(type){
     debugger;
-    this.cartService.getShippingType(type);
+    this.shippingPrice = type;
+    this.totalPrice = this.cartService.getTotalPrice(this.items, 'price') + Number(type);
     console.debug('Modalità di spedizione scelta');
   }
 }

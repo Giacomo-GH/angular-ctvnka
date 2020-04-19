@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-
+import { CartService } from '../cart.service';
 import { products } from '../products';
 
 @Component({
@@ -8,7 +8,20 @@ import { products } from '../products';
   styleUrls: ['./product-list.component.css']
 })
 export class ProductListComponent {
+
+  constructor(
+    private cartService: CartService
+  ) { }
+
   products = products;
+
+  product;
+
+  addToCart(product) {
+    debugger;
+    this.cartService.addToCart(product);
+    window.alert('Your product has been added to the cart!');
+  }
 
   share() {
     window.alert('The product has been shared!');
