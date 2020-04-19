@@ -10,7 +10,9 @@ import { CartService } from '../cart.service';
 export class CartComponent implements OnInit {
   items;
   checkoutForm;
-
+  totalPrice;
+  shippingPrices;
+  
   constructor(
     private cartService: CartService,
     private formBuilder: FormBuilder,
@@ -23,6 +25,8 @@ export class CartComponent implements OnInit {
 
   ngOnInit() {
     this.items = this.cartService.getItems();
+    this.totalPrice = this.cartService.getTotalPrice(this.items, 'price');
+    this.shippingPrices = this.cartService.getShippingPrices();
   }
 
   onSubmit(customerData) {
@@ -33,5 +37,13 @@ export class CartComponent implements OnInit {
 
     console.warn('Your order has been submitted', customerData);
   }
+
+  selectShippingType(type){
+    debugger;
+    this.cartService.selectShippingType(type);
+    console.debug('Modalità di spedizione scelta');
+  }
+
+
 
 }

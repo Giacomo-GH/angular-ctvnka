@@ -9,6 +9,18 @@
   <span>{{ item.price | currency }}</span>
 </div>
 
+<div *ngFor="let shipping of shippingPrices | async">
+  <label>
+    <input type="radio" class="radio-shipping" name="type" [value]='shipping.type' (change)=selectShippingType($event.target.value)>
+      {{ shipping.type }}
+    </label>
+</div>
+
+<div class="cart-item total">
+  <span>Total</span>
+  <span>{{ totalPrice | currency }}</span>
+</div>
+
 <form [formGroup]="checkoutForm" (ngSubmit)="onSubmit(checkoutForm.value)">
 
   <div>
