@@ -28,7 +28,7 @@ export class CartService {
     return this.http.get('/assets/shipping.json');
   }
 
-  selectShippingType(shippingType){
+  getShippingType(shippingType){
     debugger;
     this.shippingType = shippingType;
   }

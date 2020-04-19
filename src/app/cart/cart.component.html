@@ -11,7 +11,7 @@
 
 <div *ngFor="let shipping of shippingPrices | async">
   <label>
-    <input type="radio" class="radio-shipping" name="type" [value]='shipping.type' (change)=selectShippingType($event.target.value)>
+    <input type="radio" class="radio-shipping" name="type" [value]='shipping.type' (change)=getShippingType($event.target.value)>
       {{ shipping.type }}
     </label>
 </div>

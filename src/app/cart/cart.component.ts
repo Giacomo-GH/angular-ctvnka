@@ -38,12 +38,9 @@ export class CartComponent implements OnInit {
     console.warn('Your order has been submitted', customerData);
   }
 
-  selectShippingType(type){
+  getShippingType(type){
     debugger;
-    this.cartService.selectShippingType(type);
+    this.cartService.getShippingType(type);
     console.debug('Modalità di spedizione scelta');
   }
-
-
-
 }
