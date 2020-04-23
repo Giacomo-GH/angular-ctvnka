@@ -1,8 +1,25 @@
+* {
+  box-sizing: border-box;
+}
+
+.row {
+  display: flex;
+}
+
+
+.column {
+  flex: 100%;
+  padding-right: 20px;
+  padding-bottom: 20px;
+}
+
+
 img{
   width: 50%;
-  height: 50%;
-  /* float: right;*/ 
+  height: auto;
 }
+
+
 /*
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that

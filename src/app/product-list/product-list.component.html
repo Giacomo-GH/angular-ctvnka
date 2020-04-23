@@ -1,36 +1,47 @@
 <h2>Products</h2>
 
-<div *ngFor="let product of products; index as productId">
+<div class="row" *ngFor="let product of products; index as productId">
 
-  <h3>
-    <a [title]="product.name + ' details'" [routerLink]="['/products', productId]">
-      {{ product.name }}
-    </a>
-  </h3>
+  <div class="column">
+    <h3>
+      <a [title]="product.name + ' details'" [routerLink]="['/products', productId]">
+        {{ product.name }}
+      </a>
+    </h3>
 
-  <p *ngIf="product.description">
-    Description: {{ product.description }}
-  </p>
+    <p *ngIf="product.description">
+      Description: {{ product.description }}
+    </p>
 
-  <div class="btn-group">
-    <button (click)="share()">Share</button>
-    <app-product-alerts [product]="product" (notify)="onNotify()"></app-product-alerts>
-    <button (click)="addToCart(product)">Buy</button>
+    <div class="btn-group">
+      <button (click)="share()">Share</button>
+      <app-product-alerts [product]="product" (notify)="onNotify()"></app-product-alerts>
+      <button (click)="addToCart(product)">Buy</button>
+    </div>
   </div>
 
+  <!--
+    <button (click)="share()">
+      Share
+    </button>
+  -->
+  <!--
+    <app-product-alerts
+      [product]="product"
+      (notify)="onNotify()">
+    </app-product-alerts>
+  -->
+
 <!--
-  <button (click)="share()">
-    Share
-  </button>
--->
-<!--
-  <app-product-alerts
-    [product]="product"
-    (notify)="onNotify()">
-  </app-product-alerts>
+  <div class="column">
+    <img src="https://images-na.ssl-images-amazon.com/images/I/41zgaFGlp2L._AC_SY400_.jpg" alt="no_image">
+  </div>
 -->
 
-<img src="https://images-na.ssl-images-amazon.com/images/I/41zgaFGlp2L._AC_SY400_.jpg" alt="no_image">
+  <div class="column">
+    <img src="assets/PhoneXL.jpg" alt="no_image">
+  </div>
+
 
 </div>
 

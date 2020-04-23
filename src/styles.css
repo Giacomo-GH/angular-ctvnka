@@ -145,13 +145,19 @@ app-top-bar h1 {
 }
 
 .btn-group button {
-  /* background-color:#1976d2;
+  /* 
+  background-color:#1976d2;
   border: 1px solid blue;
-  color: white; */
+  color: white; 
+  */
   padding: 10px 24px; /* Some padding */
   margin: 4px 2px;
   cursor: pointer; /* Pointer/hand icon */
   float: left; /* Float the buttons side by side */
+}
+
+.btn-group{
+  flex: 100%;
 }
 
 .btn-group button:not(:last-child) {
