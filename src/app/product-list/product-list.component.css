@@ -6,19 +6,16 @@
   display: flex;
 }
 
-
 .column {
   flex: 100%;
   padding-right: 20px;
   padding-bottom: 20px;
 }
 
-
 img{
   width: 50%;
   height: auto;
 }
-
 
 /*
 Copyright Google LLC. All Rights Reserved.
