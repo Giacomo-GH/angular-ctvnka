@@ -137,8 +137,6 @@ app-top-bar h1 {
   background-color: #EEEEEE;
 }
 
-
-
 /* Personalizzazioni */
 .total{
   background-color: #C0C0C0; 
@@ -156,10 +154,6 @@ app-top-bar h1 {
   float: left; /* Float the buttons side by side */
 }
 
-.btn-group{
-  flex: 100%;
-}
-
 .btn-group button:not(:last-child) {
   border-right: none; /* Prevent double borders */
 }
@@ -169,6 +163,10 @@ app-top-bar h1 {
   content: "";
   clear: both;
   display: table;
+}
+
+app-top-bar a.button {
+  margin: 4px 2px;
 }
 
 /*
